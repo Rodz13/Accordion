@@ -2,43 +2,10 @@ import React, { useState } from 'react';
 import { BsChevronDown, BsChevronUp, BsClipboardData } from "react-icons/bs";
 
 import Tasks from './Tasks';
-import { groupedTasksData } from '../../data';
+
 import styles from '../../../styles/Accordion.module.css';
 
-const data = {
-  title: "General Infos",
-  tasks: [
-    {
-      description: "Add name and surname",
-      value: 10,
-      checked: true
-    },
-    {
-      description: "Add email",
-      value: 15,
-      checked: false
-    },
-    {
-      description: "Add linkedin profile",
-      value: 8,
-      checked: false
-    },
-    {
-      description: "Provide websites page url",
-      value: 5,
-      checked: true
-    }, 
-  ]
-}
-
-const newData = data.tasks.map((d, index) => {
-  return <Tasks description={d.description} key={index}/>
-});
-
-const Accordion = ({ title }) => {
-
-  // console.log(newData);
-
+const Accordion = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -53,10 +20,11 @@ const Accordion = ({ title }) => {
           <div className={styles.toggleContent}>{isActive ? <BsChevronUp /> : <BsChevronDown />}</div>
         </div>
       </div>
-      {isActive && newData}
+      {isActive && content.map((c, index) => (
+        <Tasks description={c.description} key={index}/>
+      ))}
     </div>
   );
 };
 
 export default Accordion;
-
