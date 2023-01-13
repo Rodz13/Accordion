@@ -1,7 +1,7 @@
 @import url('//fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
 .container {
-    border-bottom: 1px solid #ced4d3;
+    border-bottom: 1px solid #CCCCCC;
     padding: 20px;
     font-family: 'Source Sans Pro';
 }
@@ -17,6 +17,8 @@
 
 .title {
     display: flex;
+    font-size: 18px;
+    color: #333333;
 }
 
 .icon {
@@ -26,7 +28,8 @@
 .toggle {
     display: flex;
     align-items: center;
-    color: #abb0b0;
+    color: #999999;
+    font-weight: 400;
 }
 
 .toggleContent {
@@ -42,6 +45,6 @@
 }
 
 .input {
-    accent-color: #5DB089;
+    accent-color: #00B797;
     margin-right: 15px;
 }
