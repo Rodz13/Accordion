@@ -15,7 +15,7 @@ const ProgressBar = ({ done }) => {
   }, 200);
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-testid="bar">
           <div className={styles.filler} style={progress}>
             <span className={styles.label}>{done}%</span>
           </div>

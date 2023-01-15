@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 
 import Title from '../src/components/title/title';
 import Accordion from '../src/components/accordion/Accordion';
@@ -17,8 +18,33 @@ export const getStaticProps = async () => {
 	}
 };
 
-
 export default function Home({ tasks }) {
+	const [update, setUpdate] = useState(false);
+	const [data, setData] = useState(!update && tasks);
+	const [progress, setProgress] = useState(0);
+
+	const updateData = (newData) => {
+		setUpdate((update) => !update)
+		let replaceData = data
+		replaceData[newData.key].tasks = newData.data
+		setData(replaceData)
+	}
+
+	useEffect(() => {
+		let totalTasksValue = 0;
+		let taskValue = 0;
+		for (const tasks of data) {
+			for (const subTasks of tasks.tasks) {
+				totalTasksValue += subTasks.value
+				if (subTasks.checked) {
+					taskValue += subTasks.value
+				}
+			}
+		}
+		const normalizedValue = Math.round((taskValue / totalTasksValue) * 100);
+		setProgress(normalizedValue);
+	}, [update]);
+
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -28,11 +54,17 @@ export default function Home({ tasks }) {
 			<main>
 				<div className={styles.wrapper}>
 					<Title className={styles.title}/>
-					<ProgressBar done={36} />
+					<ProgressBar done={progress} />
 					<div className={styles.accordion}>
-					{tasks.map((t, index) => (
-						<Accordion title={t.name} key={index} content={t.tasks}/>
-					))}
+						{data.map((t, index) => (
+							<Accordion
+								updateData={updateData} 
+								title={t.name}
+								key={index}
+								content={t.tasks}
+								ind={index}
+							/>
+						))}
 					</div>
 				</div>
 			</main>

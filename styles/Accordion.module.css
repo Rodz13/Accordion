@@ -25,6 +25,11 @@
     margin-right: 15px;
 }
 
+.iconDone {
+    margin-right: 15px;
+    fill:#00B797;
+}
+
 .toggle {
     display: flex;
     align-items: center;
