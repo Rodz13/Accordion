@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BsChevronDown, BsChevronUp, BsClipboardData, BsClipboardCheck } from "react-icons/bs";
 
-import GroupedTasks from './GroupedTasks';
+import GroupedTasks from './groupedTasks';
 
 import styles from '../../../styles/Accordion.module.css';
 

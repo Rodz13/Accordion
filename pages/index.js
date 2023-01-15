@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import Title from '../src/components/title/title';
-import Accordion from '../src/components/accordion/Accordion';
+import Accordion from '../src/components/accordion/accordion';
 import ProgressBar from '../src/components/progressBar/progressBar';
 
 import styles from '../styles/Home.module.css';
@@ -48,7 +48,7 @@ export default function Home({ tasks }) {
 	return (
 		<div className={styles.container}>
 			<Head>
-				<title>Lodgyfy</title>
+				<title>Lodgify</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>

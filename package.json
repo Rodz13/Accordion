@@ -3,12 +3,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress": "npx cypress run",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1"
+  },
+  "devDependencies": {
+    "cypress": "^12.3.0"
   }
 }

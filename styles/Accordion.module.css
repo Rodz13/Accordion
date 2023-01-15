@@ -19,6 +19,7 @@
     display: flex;
     font-size: 18px;
     color: #333333;
+    align-items: center;
 }
 
 .icon {
@@ -52,4 +53,10 @@
 .input {
     accent-color: #00B797;
     margin-right: 15px;
+}
+
+@media screen and (max-width: 415px) {
+	.title {
+        font-size: 14px;
+    }
 }
