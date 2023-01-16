@@ -5,7 +5,7 @@ import styles from './Title.module.css';
 
 const Title = ({ pageTitle }) => {
     return (
-        <div className={styles.title} data-testid="title">
+        <div className={styles.title} data-testid='title'>
             {pageTitle}
         </div>
     );

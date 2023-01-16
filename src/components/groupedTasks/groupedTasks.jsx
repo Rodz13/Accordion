@@ -22,12 +22,12 @@ const GroupedTasks = ({ labels, handleCheckboxes, check, index }) => {
     }, [selected]);
 
 	return (
-        <div className={styles.wrapper} data-testid="grouped-tasks">
+        <div className={styles.wrapper} data-testid='grouped-tasks'>
             <div className={styles.tasksWrapper}>
                 <label className={styles.label}>
                     <input 
                         className={styles.input}
-                        type="checkbox"
+                        type='checkbox'
                         value={labels}
                         checked={check}
                         onChange={handleChange}

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { BsChevronDown, BsChevronUp, BsClipboardData, BsClipboardCheck } from "react-icons/bs";
+import { BsChevronDown, BsChevronUp, BsClipboardData, BsClipboardCheck } from 'react-icons/bs';
 
-import GroupedTasks from '../groupedTasks/GroupedTasks';
+import GroupedTasks from '../groupedTasks/GroupedTasks.jsx';
 
 import styles from './Accordion.module.css';
 
@@ -44,7 +44,7 @@ const Accordion = ({ title, contents, index, updateData }) => {
     };
 
     return (
-        <div className={styles.container} data-testid="headers">
+        <div className={styles.container} data-testid='headers'>
             <div className={styles.content} onClick={handleToggle}>
                 <div className={styles.title}>
                     { isAllSelected ?
