@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../../../styles/Title.module.css';
+import styles from './Title.module.css';
 
 const Title = ({ pageTitle }) => {
 	return (

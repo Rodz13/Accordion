@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../../../styles/GroupedTasks.module.css';
+import styles from './GroupedTasks.module.css';
 
 const GroupedTasks = ({ labels, handleCheckboxes, check, ind }) => {
 	const [selected, setSelected] = useState(null);
