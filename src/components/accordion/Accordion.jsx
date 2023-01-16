@@ -6,12 +6,12 @@ import GroupedTasks from '../groupedTasks/GroupedTasks';
 
 import styles from './Accordion.module.css';
 
-const Accordion = ({ title, content, ind, updateData }) => {
+const Accordion = ({ title, contents, index, updateData }) => {
     const [isActive, setIsActive] = useState(false);
     const [isAllSelected, setIsAllSelected] = useState(false);
-    const [mainContent, setMainContent] = useState(content);
+    const [mainContent, setMainContent] = useState(contents);
 
-    const titleColor = (isAllSelected ? '#00B797' : '#333333');
+    const titleColor = isAllSelected ? '#00B797' : '#333333';
 
     const handleCheckboxes = (data) => {
         let main = mainContent;
@@ -26,24 +26,17 @@ const Accordion = ({ title, content, ind, updateData }) => {
         });
         
         setMainContent(edit);
-        
-        const newData = {
+
+        updateData({ 
             key: data.key,
             data: edit
-        };
-
-        updateData(newData);
+        });
     };
 
     useEffect(() => {
-        const length = content?.length;
-        const count = content?.filter((c) => (c.checked));
+        const isAllSelected = contents?.filter((item) => (item.checked)).length === contents.length;
 
-        if (count?.length === length) {
-            setIsAllSelected(true);
-        } else {
-            setIsAllSelected(false);
-        }
+        setIsAllSelected(isAllSelected);
     }, [mainContent]);
 
     const handleToggle = () => {
@@ -66,14 +59,14 @@ const Accordion = ({ title, content, ind, updateData }) => {
                     </div>
                 </div>
             </div>
-            { isActive && mainContent && mainContent.map((c, index) => {
+            { isActive && mainContent && mainContent.map((content, idex) => {
                 return (
                     <GroupedTasks 
-                        labels={c.description || c.name}
-                        key={index}
-                        check={c.checked}
+                        labels={content.description || content.name}
+                        key={idex}
+                        check={content.checked}
                         handleCheckboxes={(data) => handleCheckboxes(data)}
-                        ind={ind}
+                        index={index}
                         className={styles.tasksWrapper}
                     />
                 );
@@ -84,8 +77,8 @@ const Accordion = ({ title, content, ind, updateData }) => {
 
 Accordion.propTypes = {
     title: PropTypes.string,
-    content: PropTypes.array,
-    ind: PropTypes.number,
+    contents: PropTypes.array,
+    index: PropTypes.number,
     updateData: PropTypes.func,
 };
 

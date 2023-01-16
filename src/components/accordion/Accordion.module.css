@@ -4,6 +4,7 @@
     border-bottom: 1px solid #CCCCCC;
     padding: 20px;
     font-family: 'Source Sans Pro';
+    cursor: pointer;
 }
 
 .container:last-child {

@@ -9,12 +9,18 @@ import ProgressBar from '../src/components/progressBar/ProgressBar';
 import styles from '../styles/Home.module.css';
 
 export const getStaticProps = async () => {
-    const res = await fetch("https://gist.githubusercontent.com/huvber/ba0d534f68e34f1be86d7fe7eff92c96/raw/508f46dbf6535f830aa92cf97359853c5700bab1/mock-progress");
-    const data = await res.json();
+    try {
+        const res = await fetch("https://gist.githubusercontent.com/huvber/ba0d534f68e34f1be86d7fe7eff92c96/raw/508f46dbf6535f830aa92cf97359853c5700bab1/mock-progress");
+        const data = await res.json();
 
-    return {
-        props: {
-            tasks: data
+        return {
+            props: {
+                tasks: data
+            }
+        }
+    } catch {
+        return {
+            notFound: true
         }
     }
 };
@@ -59,13 +65,13 @@ const Home = ({ tasks }) => {
                     <Title className={styles.title} pageTitle={'Lodgify Grouped Tasks'} />
                     <ProgressBar done={progress} />
                     <div className={styles.accordion}>
-                        {data.map((t, index) => (
+                        {data.map((task, index) => (
                             <Accordion
                                 updateData={updateData} 
-                                title={t.name}
+                                title={task.name}
                                 key={index}
-                                content={t.tasks}
-                                ind={index}
+                                contents={task.tasks}
+                                index={index}
                             />
                         ))}
                     </div>

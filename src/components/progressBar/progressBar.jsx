@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 
-import styles from '../../../styles/ProgressBar.module.css';
+import styles from './ProgressBar.module.css';
 
 const ProgressBar = ({ done }) => {
     const [progress, setProgress] = useState({});
