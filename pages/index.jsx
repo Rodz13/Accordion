@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-import Title from '../src/components/title/Title';
-import Accordion from '../src/components/accordion/Accordion';
-import ProgressBar from '../src/components/progressBar/ProgressBar';
+import Title from '../src/components/title/title';
+import Accordion from '../src/components/accordion/accordion';
+import ProgressBar from '../src/components/progressBar/progressBar';
 
 import styles from '../styles/Home.module.css';
 
