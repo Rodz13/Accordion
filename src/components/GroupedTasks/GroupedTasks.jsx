@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import styles from '../../../styles/Accordion.module.css';
+import styles from '../../../styles/GroupedTasks.module.css';
 
 const GroupedTasks = ({ labels, handleCheckboxes, check, ind }) => {
 	const [selected, setSelected] = useState(null);
@@ -22,17 +22,19 @@ const GroupedTasks = ({ labels, handleCheckboxes, check, ind }) => {
 
 	return (
 		<div className={styles.wrapper} data-testid="grouped-tasks">
-			<label className={styles.label}>
-				<input 
-					className={styles.input}
-					type="checkbox"
-					value={labels}
-					checked={check}
-					onChange={handleChange}
-				/>
-					{labels}
-			</label>
-		</div>
+			<div className={styles.tasksWrapper}>
+				<label className={styles.label}>
+					<input 
+						className={styles.input}
+						type="checkbox"
+						value={labels}
+						checked={check}
+						onChange={handleChange}
+					/>
+						{labels}
+				</label>
+			</div>
+			</div>
 	);
 };
 

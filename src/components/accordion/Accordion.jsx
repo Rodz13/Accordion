@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BsChevronDown, BsChevronUp, BsClipboardData, BsClipboardCheck } from "react-icons/bs";
 
-import GroupedTasks from './groupedTasks';
+import GroupedTasks from '../GroupedTasks/GroupedTasks';
 
 import styles from '../../../styles/Accordion.module.css';
 
@@ -59,17 +59,20 @@ const Accordion = ({ title, content, ind, updateData }) => {
 					</div>
 				</div>
 			</div>
-			{isActive && mainContent && mainContent.map((c, index) => {
-				return (
-					<GroupedTasks 
-						labels={c.description || c.name}
-						key={index}
-						check={c.checked}
-						handleCheckboxes={(data) => handleCheckboxes(data)}
-						ind={ind}
-					/>
-				);
-			})}
+			{/* <div className={styles.tasksWrapper}> */}
+				{isActive && mainContent && mainContent.map((c, index) => {
+					return (
+						<GroupedTasks 
+							labels={c.description || c.name}
+							key={index}
+							check={c.checked}
+							handleCheckboxes={(data) => handleCheckboxes(data)}
+							ind={ind}
+							className={styles.tasksWrapper}
+						/>
+					);
+				})}			
+			{/* </div> */}
 		</div>
 	);
 };
