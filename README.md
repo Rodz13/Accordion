@@ -1,10 +1,11 @@
-## Lodgify - FE Technical Challenge 
-    Task [information and instructions](https://lodgify.notion.site/Lodgify-FE-Technical-Challenge-65599fbea9d9436794e12f62d6542c3b).
-    
-    The idea is to create a widget that shows the current progress of the profile creation of the user.
-    The user should be able to see the missing tasks of a specific area and be able to mark them as done.
+## Lodgify - FE Technical Challenge
 
-    The widget can be seen live at [https://accordion-theta.vercel.app/](https://accordion-theta.vercel.app/).
+Task [information and instructions](https://lodgify.notion.site/Lodgify-FE-Technical-Challenge-65599fbea9d9436794e12f62d6542c3b).
+
+The idea is to create a widget that shows the current progress of the profile creation of the user.
+The user should be able to see the missing tasks of a specific area and be able to mark them as done.
+
+The widget can be seen live at [https://accordion-theta.vercel.app/](https://accordion-theta.vercel.app/).
 
 ### How to run
 - Development mode - `npm run dev` - locally - http://localhost:3000/
