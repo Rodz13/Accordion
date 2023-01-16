@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from '../../../styles/GroupedTasks.module.css';
 
@@ -34,8 +35,15 @@ const GroupedTasks = ({ labels, handleCheckboxes, check, ind }) => {
 						{labels}
 				</label>
 			</div>
-			</div>
+		</div>
 	);
 };
 
+GroupedTasks.propTypes = {
+	labels: PropTypes.string, 
+	handleCheckboxes: PropTypes.func,
+	check: PropTypes.bool,
+	ind: PropTypes.number,
+
+}
 export default GroupedTasks;

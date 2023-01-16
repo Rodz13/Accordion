@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from '../../../styles/Title.module.css';
 
-const Title = () => {
+const Title = ({ pageTitle }) => {
 	return (
     	<div className={styles.title} data-testid="title">
-			Lodgify Grouped Tasks
+			{pageTitle}
 		</div>
   	);
+};
+
+Title.propTypes = {
+	pageTitle: PropTypes.string,
 };
 
 export default Title;

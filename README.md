@@ -23,6 +23,9 @@
     Data is fetched from the api that's mentioned on the [task instructions](https://gist.githubusercontent.com/huvber/ba0d534f68e34f1be86d7fe7eff92c96/raw/508f46dbf6535f830aa92cf97359853c5700bab1/mock-progress) via getStaticProps() function that we export from the page component used to generate data on the build time.
     Note that there are a couple of typos on the data provided, such as `"name": "Accomiplishment"` and `birthdate`. Also 2 properties have the handler `name` instead of `description`.
 
+
+    Icons are imported from [Bootstrap Icons](https://icons.getbootstrap.com/#icons).
+
     The end-to-end(e2e) tests rely on [cypress](https://docs.cypress.io).
     Cypress is a developer-friendly tool operates directly in the browser using a DOM manipulation technique and enables front-end developers and QA engineers to write automated web tests while eliminating pain points.
     Also, it helps to test high value features and the developer is able to similate the user experience during developemnt and see the components interacting with each other.
