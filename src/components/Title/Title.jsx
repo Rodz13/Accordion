@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import styles from './Title.module.css';
 
-const Title = ({ pageTitle }) => {
+const Title = ({ children }) => {
     return (
         <div className={styles.title} data-testid='title'>
-            {pageTitle}
+            {children}
         </div>
     );
 };

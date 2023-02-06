@@ -62,7 +62,9 @@ const Home = ({ tasks }) => {
             </Head>
             <main>
                 <div className={styles.wrapper}>
-                    <Title className={styles.title} pageTitle={'Lodgify Grouped Tasks'} />
+                    <Title className={styles.title}>
+                        User Profile Creation Progress
+                    </Title>
                     <ProgressBar done={progress} />
                     <div className={styles.accordion}>
                         {data.map((task, index) => (
